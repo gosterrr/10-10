@@ -1,0 +1,31 @@
+/* Aproximación al estilo de 𝑽𝒊𝒏𝒕𝒂𝒈𝒆 con texto normal, sin sustituir letras por símbolos matemáticos. */
+:root {
+  --font-vintage: Georgia, 'Times New Roman', serif;
+}
+h1, h2, h3, .nav a:first-child, .button {
+  font-family: var(--font-vintage);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -.035em;
+}
+h1 em, h2 em {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+}
+.button {
+  font-size: 17px;
+  letter-spacing: .01em;
+}
+.nav a:first-child {
+  letter-spacing: .08em;
+}
+.glitch::before, .glitch::after {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  letter-spacing: inherit;
+}
+.secret-letter p, .detail-card p, .welcome-message p, .intro p {
+  font-style: normal;
+}
