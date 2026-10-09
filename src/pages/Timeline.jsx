@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useReducedMotion } from 'framer-motion';
 import { Page } from '../App';
-import { photos, sections } from '../data';
-import { Photo } from './Puzzle';
-export default function Memories(){const reduced=useReducedMotion();const gallery=photos.length?photos:Array(6).fill(null);return <Page><section className="intro"><span className="eyebrow">Un universo pequeño, nuestro</span><h1>Nosotros, en cada<br/><em>pequeño recuerdo.</em></h1><p>Elige una puerta. Cada una guarda algo para ti.</p></section><section className="animated-photos" aria-label="Fotos de nosotros">{gallery.map((photo,i)=><motion.figure key={i} initial={{opacity:0,y:reduced?0:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:reduced?0:.6,delay:reduced?0:(i%6)*.08}}><div className="floating-photo" style={{'--delay':`${-i*1.3}s`,'--tilt':`${i%2?4:-4}deg`}}><Photo photo={photo} index={i}/><figcaption>{photo?.alt||'Aquí irá una foto de nosotros'}</figcaption></div></motion.figure>)}</section><nav className="doors" aria-label="Explorar nuestros recuerdos">{sections.map((section,i)=><motion.div key={section.path} initial={{opacity:0,y:reduced?0:20}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:reduced?0:.4,delay:reduced?0:i*.05}}><Link className={`door ${section.path==='/secreto'?'secret-door':''}`} to={section.path}><span className="door-symbol" aria-hidden="true">{section.symbol}</span><h2 className={section.path==='/secreto'?'glitch':''} data-text={section.title}>{section.title}</h2><p>{section.description}</p><span className="door-arrow" aria-hidden="true">↗</span></Link></motion.div>)}</nav></Page>;}
+import { sections } from '../data';
+import { couplePhotos } from '../media';
+import PhotoFrames from '../components/PhotoFrames';
+export default function Memories(){return <Page><section className="intro"><h1>Nosotros</h1></section><PhotoFrames photos={couplePhotos} count={3}/><nav className="doors" aria-label="Nuestros recuerdos">{sections.map(section=><Link key={section.path} className={`door title-only ${section.path==='/secreto'?'secret-door':''}`} to={section.path}><h2 className={section.path==='/secreto'?'glitch':''} data-text={section.title}>{section.title}</h2></Link>)}</nav></Page>;}
