@@ -8,6 +8,7 @@ import './styles.css';
 import './typography.css';
 import './secret-effects.css';
 import './mobile.css';
+import './palette.css';
 
 // Configura el mapa sin sobrescribir las fotos ni los mensajes de data.js.
 secret.mapEmbedUrl = mapEmbedUrl;

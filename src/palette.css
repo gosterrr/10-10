@@ -1,0 +1,35 @@
+/* Paleta proporcionada por el usuario: superficies sólidas, no lavadas. */
+:root{--rose:#f0b5ba;--pink:#f7dcea;--aqua:#d7eff1;--blue:#95b1db;--peach:#f3decf;--sky:#95b1db;--mint:#d7eff1;--pale:#f3decf;--page-bg:#f7dcea;--muted:#455368;background:var(--page-bg);color:#29374c}
+body{background:var(--page-bg)}
+.nav{background:var(--peach);border-bottom:1px solid #dfbaac}
+.button{background:var(--blue);color:#213149}
+.secondary{background:var(--peach);color:#29374c}
+em,.year,.door-symbol{color:#405c88}
+.welcome-shade{background:linear-gradient(90deg,#f7dcea99,#f3decf80);backdrop-filter:blur(0)}
+.welcome-message{background:var(--pink);padding:38px 32px;border-radius:28px;box-shadow:0 12px 35px #3039471a}
+.photo{background:var(--rose)}
+.tone-1{background:var(--pink)}
+.tone-2{background:var(--aqua)}
+.tone-3{background:var(--blue)}
+.tone-4{background:var(--peach)}
+.floating-photo{background:var(--peach);border-color:#dfbaac}
+.doors>div:nth-child(1) .door{background:var(--rose);border-color:#dc9fa6}
+.doors>div:nth-child(2) .door{background:var(--aqua);border-color:#afdade}
+.doors>div:nth-child(3) .door{background:var(--blue);border-color:#7f9bc6}
+.doors>div:nth-child(4) .door{background:var(--peach);border-color:#dfbaac}
+.door p{color:#39485a}
+.doors .secret-door{background:#272c36;border-color:#444b58}
+.doors .secret-door p,.doors .secret-door .door-symbol{color:#c6c0c9}
+.detail-card{background:var(--aqua);border-color:#afdade}
+.pending{background:var(--peach)}
+.envelope-0{background:var(--peach);border-color:#dfbaac}
+.envelope-1{background:var(--rose);border-color:#dc9fa6}
+.envelope-2{background:var(--aqua);border-color:#afdade}
+.wax-seal{background:#b16d7b;color:#fff1eb}
+.letter-paper{background-color:#fff0dd;border-color:#e5cdb6}
+.secret-panel{background:#272c36}
+.secret-panel .button{background:var(--blue);color:#213149}
+.secret-panel .secondary{background:var(--peach);color:#29374c}
+::selection{background:var(--rose)}
+@media(max-width:767px){.welcome-message{padding:30px 22px;border-radius:22px}}
+@media(hover:hover){.doors .door:not(.secret-door):hover{filter:brightness(.98)}.doors .secret-door:hover{background:#303642}}
