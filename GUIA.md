@@ -1,25 +1,29 @@
-# Nuestra página de aniversario
+# Aniversario: nueva experiencia
 
-## Desarrollo
+La experiencia anterior fue reemplazada. Los nombres de archivo Puzzle.jsx, Timeline.jsx y Apology.jsx se reutilizan para inicio, menú de recuerdos y secciones; ya no contienen puzzle, línea de tiempo ni la carta antigua. La paleta está unificada en src/styles.css.
 
-Requiere Node.js 20.19+ o una versión LTS más reciente.
+## Probar
 
-```bash
 npm install
 npm run dev
 npm run build
-```
 
-## Personalizar
+No se ejecutó el build durante la preparación: verifica localmente o en Vercel.
 
-Edita src/data.js para cambiar mensajes, carta, títulos, pista y respuesta. La clave inicial es 1010. Los textos son borradores: reemplaza los mensajes generales con tus recuerdos reales antes de compartir.
+## Fotos
 
-Agrega fotos y videos MP4 a public/media. En memories usa image: '/media/foto.jpg' o video: '/media/video.mp4'. Puedes usar ambos. Mientras no agregues medios se muestran espacios decorativos, no archivos rotos. Revisa las fotos y sus descripciones antes de publicar. La firma se edita en src/pages/Apology.jsx.
+Agrega tus fotos a public/media y completa photos en src/data.js con objetos {src:'/media/foto.jpg',alt:'Descripción del recuerdo'}. El collage usa estas fotos y el menú las muestra animadas. Sin fotos aparecen espacios decorativos, no imágenes de personas inventadas.
 
-## Vercel
+## Secciones
 
-Importa gosterrr/10-10, selecciona Vite, build npm run build y directorio dist. vercel.json permite recargar las rutas /historia y /disculpas. Comprueba el build en tu equipo o en Vercel; no se ejecutó durante la generación de los archivos.
+/canciones, /momentos, /decirte y /cupones están preparadas con contenido pendiente. /secreto pide confirmación, muestra un borrador largo y el espacio del mapa. Cambia secret.paragraphs cuando definamos la carta real.
 
-## Privacidad
+## Google Maps
 
-El acertijo es una experiencia visual, no autenticación. La respuesta y los mensajes son visibles en el código; los medios públicos pueden abrirse por URL. sessionStorage conserva la apertura durante la sesión de la pestaña. La etiqueta noindex solicita a buscadores no indexar, pero no controla el acceso. No publiques contenido sensible sin consentimiento. No hay analytics ni servicios de terceros en esta plantilla.
+La ubicación está vacía intencionalmente. Cuando elijas el lugar, usa Compartir > Insertar un mapa en Google Maps y copia únicamente la URL src del iframe en secret.mapEmbedUrl; agrega secret.placeName. Se admiten URLs HTTPS de www.google.com, maps.google.com y www.google.cl. No pegues un enlace corto como URL de iframe. No hay acceso al GPS. Hasta configurar el mapa, el botón Sí permanece desactivado.
+
+Después de confirmar que está en el lugar, se pide otra confirmación; al aceptarla abre /mirame. Entrar directamente a esa ruta sin el estado de confirmación redirige a /secreto. Este flujo no es autenticación y no protege contenido privado.
+
+## Privacidad y despliegue
+
+Las fotos y mensajes del frontend pueden verse públicamente; usa contenido compartible y con consentimiento. El iframe de Google Maps carga un servicio externo cuando se configure. Vercel: Vite, build npm run build, output dist. Se conserva vercel.json y la configuración JSX de Vite.

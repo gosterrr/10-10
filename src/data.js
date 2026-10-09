@@ -1,16 +1,23 @@
-export const settings = { answer: '1010', hint: 'Dos números para el día y dos para el mes. La respuesta está en el nombre de este pequeño refugio.', title: 'Cuatro años de nosotros' };
-// Agrega rutas como /media/primer-recuerdo.jpg o /media/aventura.mp4. No incluyas public en la ruta.
-export const memories = [
- { year:'01', title:'El comienzo', message:'Hoy miro hacia atrás y pienso en todo lo que comenzó a construirse entre nosotros. Este espacio es para recordar nuestro inicio, con nuestras propias palabras.', image:'', video:'', caption:'Agrega aquí una foto de nuestro comienzo.' },
- { year:'02', title:'Compartir el camino', message:'Entre aventuras y días cotidianos, fuimos llenando nuestra historia de recuerdos. Quiero guardar aquí uno de esos momentos que todavía nos hacen sonreír.', image:'', video:'', caption:'Agrega una foto o video de una aventura.' },
- { year:'03', title:'Los días complejos', message:'No todo ha sido sencillo. También hubo errores y momentos difíciles. No quiero borrarlos ni disfrazarlos: son parte de lo que necesitamos mirar con honestidad.', image:'', video:'', caption:'Un recuerdo que quieras conservar.' },
- { year:'04', title:'Lo que nos acompaña', message:'Cuatro años siendo compañeros: complejos, llenos de aventuras y de recuerdos que nos acompañarán siempre. Hoy quiero celebrar lo vivido sin dejar de reconocer lo que puedo hacer mejor.', image:'', video:'', caption:'Nuestra foto para este aniversario.' }
+// Agrega fotos reales a public/media y sus rutas a este arreglo.
+export const photos = [];
+// Ejemplo: { src: '/media/foto1.jpg', alt: 'Nosotros en nuestra aventura' }
+export const sections = [
+ {path:'/canciones',title:'Canciones que me recuerdan a ti',symbol:'♫',description:'Hay canciones que tienen un poquito de nosotros.'},
+ {path:'/momentos',title:'Mis momentos favoritos',symbol:'♡',description:'Esos recuerdos a los que siempre quiero volver.'},
+ {path:'/decirte',title:'Cosas que debo decirte',symbol:'✉',description:'Palabras que merecen su propio espacio.'},
+ {path:'/cupones',title:'Cupones',symbol:'✧',description:'Pequeñas sorpresas para compartir.'},
+ {path:'/secreto',title:'Secreto',symbol:'?',description:'Hay algo más detrás de esta puerta.'}
 ];
-export const letter = [
- 'Quiero dedicarte estas palabras sin esconderme detrás de una sorpresa bonita. Te pido perdón por mis malas acciones y por los errores que cometí en el pasado.',
- 'Reconozco que mis decisiones y mis palabras pudieron hacerte daño. No quiero minimizarlo, justificarlo ni usar nuestros buenos recuerdos para tapar lo que estuvo mal.',
- 'Me corresponde escuchar cómo te sentiste y hacerme responsable de lo que hice. Cambiar no consiste solo en escribir una carta: consiste en cuidar mis acciones, respetar tus límites y ser más honesto en lo cotidiano.',
- 'Estos cuatro años siendo compañeros han sido complejos, pero también han estado llenos de aventuras y recuerdos que nos acompañarán siempre. Valoro esa historia, con todo lo que significa para nosotros.',
- 'No te pido que olvides lo ocurrido ni que me perdones hoy. Puedes sentir lo que necesites sentir y tomarte tu tiempo. Esta carta no exige una respuesta.',
- 'En este aniversario quiero agradecer los momentos compartidos y reconocer, con sinceridad, lo que necesito hacer mejor. Lo vivido merece cariño; tú mereces respeto.'
-];
+export const secret = {
+ // Pendiente: pega aquí la URL src de un iframe de Google Maps para el lugar que elijas.
+ mapEmbedUrl: '',
+ placeName: '',
+ // Borrador editable; definiremos el mensaje y la decisión contigo.
+ paragraphs: [
+ 'Antes de continuar, quiero que te tomes un momento. Lo que hay detrás de esta página lo quiero compartir contigo con calma y en persona.',
+ 'Estos cuatro años siendo compañeros han sido complejos, llenos de aventuras y de recuerdos que nos acompañarán siempre. Este espacio guarda un poquito de todo eso, pero hay palabras que no quiero dejar solamente en una pantalla.',
+ 'No tienes que seguir por curiosidad ni sentir que debes responder de una forma determinada. Puedes volver a nuestros recuerdos cuando quieras. Cuando preparemos este lugar, quiero que llegues aquí porque tú también quieres estar.',
+ 'Si decides continuar, revisa el lugar del mapa. La página te preguntará si estás allí y volverá a pedirte confirmación antes de mostrar el último mensaje. No se revisará tu ubicación automáticamente.',
+ 'El resto quiero decirlo mirándote a los ojos.'
+ ]
+};
